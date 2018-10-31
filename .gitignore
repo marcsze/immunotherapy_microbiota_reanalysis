@@ -8,6 +8,7 @@
 *.fastq
 *.gz
 *.sra
+*.sra.*
 
 # Unneeded temp files
 index.html.*
