@@ -14,7 +14,7 @@ REF=data/references
 
 
 # Download the data set
-wget -r -q -np -nd -k -P $DOWNDIR ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByStudy/sra/SRP/SRP098/SRP098484/
+wget -r -q -np -nd $DOWNDIR ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByStudy/sra/SRP/SRP098/SRP098484/
 
 # remove uneeded files
 rm $DOWNDIR/index.html*
