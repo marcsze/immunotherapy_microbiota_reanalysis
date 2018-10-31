@@ -1,0 +1,32 @@
+#!bash
+
+#Load needed R
+module load R/3.3.0
+module load sratoolkit/2.8.2-1
+
+module list
+
+#module load sratoolkit/2.7.0
+mothurRv=/nfs/turbo/schloss-lab/bin/mothur
+DOWNDIR=data/raw
+WORKDIR=data/process
+REF=data/references
+
+
+# Download the data set
+wget -r -q -np -nd -k -P $DOWNDIR ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByStudy/sra/SRP/SRP098/SRP098484/
+
+# remove uneeded files
+rm $DOWNDIR/index.html*
+rm $DOWNDIR/*.sra.*
+
+# Convert to fasta files that will be used
+for sample in $DOWNDIR/*.sra
+do
+	fastq-dump --split-files $sample -O $WORKDIR
+
+done
+
+
+# Run mothur for sequencing processing on combined file
+$mothurRv "#make.file(inputdir=$WORKDIR, type=fastq, prefix=stability)"

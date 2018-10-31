@@ -3,3 +3,8 @@
 *.logfile
 *.pbs
 *.pbs.*
+
+# Large temp files (can be downloaded when needed)
+*.fastq
+*.gz
+*.sra
