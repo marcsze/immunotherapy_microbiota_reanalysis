@@ -48,4 +48,9 @@ REF=data/references
 
 
 # # Run mothur for sequencing processing on combined file
-mothur "#make.file(inputdir=$WORKDIR, type=fastq, prefix=stability)"
+#mothur "#make.file(inputdir=$WORKDIR, type=fastq, prefix=stability)"
+
+# Change sequences names for mothur processing
+
+Rscript code/make_nice_mothur_file.R
+
