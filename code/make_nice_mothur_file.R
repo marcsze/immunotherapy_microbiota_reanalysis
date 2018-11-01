@@ -18,4 +18,4 @@ new_mothur_file <- mothur_file %>%
   select(Library_Name, X2, X3)
 
 # Write out the new file
-write_tsv(new_mothur_file, "data/process/stabiliy.files")
+write_tsv(new_mothur_file, "data/process/stability.files")
