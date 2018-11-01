@@ -13,3 +13,5 @@
 # Unneeded temp files
 index.html.*
 index.html
+.Rproj.user
+*.Rproj
